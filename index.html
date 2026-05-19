@@ -15,7 +15,62 @@
             width: 700px;
             margin-top: 20px;
         }
+
+        #features {
+            margin-top: 20px;
+            white-space: pre-line;
+        }
     </style>
+
+    <script>
+        function getPhysicalFeatures() {
+            document.getElementById("features").innerText = `
+Physical Features:
+
+Deccan Plateau (majority of Karnataka)
+- Covers most of the state
+- Semi-arid climate with moderate rainfall
+- Supports drought-resistant crops like millets, cotton, and oilseeds
+- Red and black soils influence farming patterns
+
+Western Ghats (western border)
+- Mountainous and heavily forested region
+- High rainfall area
+- Supports plantation crops like coffee, tea, and spices
+- Rich forests provide timber and sandalwood
+- Rivers and steep terrain support hydroelectric power
+
+Coastal Plain (Arabian Sea coast)
+- Narrow, low-lying region with heavy rainfall
+- Supports rice farming and coconut/cashew plantations
+- Fishing is important
+- Ports help trade and transportation
+
+Major Rivers (Kaveri, Krishna, Tungabhadra)
+- Provide irrigation for agriculture
+- Support hydroelectric power
+- Supply water to drier inland regions
+
+Mineral Resources (plateau regions)
+- Includes iron ore, chromite, and other minerals
+- Supports mining and heavy industry
+            `;
+        }
+       function getFeatureImages() {
+    document.getElementById("physical_feature_images").innerHTML = `
+        <img src="PXL_20230714_101956414.jpg">
+        <img src="PXL_20240806_064409684.PANO.jpg">
+        <img src="PXL_20230708_093817563.jpg">
+        <img src="PXL_20240730_124015214.PANO.jpg">
+        <img src="PXL_20250728_054502046.jpg">
+        <img src="PXL_20250731_130011985.jpg">
+        <img src="PXL_20250722_092851452.jpg">
+        <img src="PXL_20240806_085401966.PANO.jpg">
+        <img src="PXL_20240809_132605668.PANO.jpg">
+        <img src="PXL_20240811_054521682.PANO.jpg">
+    `;
+}
+    </script>
 </head>
 
 <body>
@@ -27,10 +82,20 @@
         Continent: Asia <br>
         Country: India <br>
         State: Karnataka <br><br>
-
-      <img src="flightpath.png">
+        <img src="flightpath.png">
     </div>
 
+    <br><br>
+
+    <button onclick="getPhysicalFeatures()">
+        Click the button to learn about Karnataka's Physical Features
+    </button>
+    <div id="features"></div>
+    
+    <button onclick="getFeatureImages()"> Click the button to see pcitures about Karnataka's Physical Features
+    </button>
+    
+    <div id="physical_feature_images"></div>
 </body>
 
 </html>
