@@ -14,15 +14,50 @@
         img {
             width: 700px;
             margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #features {
             margin-top: 20px;
             white-space: pre-line;
         }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+
+        nav button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .section {
+            display: none;
+        }
     </style>
 
     <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll(".section");
+
+            sections.forEach(section => {
+                section.style.display = "none";
+            });
+
+            document.getElementById(sectionId).style.display = "block";
+        }
+
         function getPhysicalFeatures() {
             document.getElementById("features").innerText = `
 Physical Features:
@@ -56,46 +91,71 @@ Mineral Resources (plateau regions)
 - Supports mining and heavy industry
             `;
         }
-       function getFeatureImages() {
-    document.getElementById("physical_feature_images").innerHTML = `
-        <img src="PXL_20230714_101956414.jpg">
-        <img src="PXL_20240806_064409684.PANO.jpg">
-        <img src="PXL_20230708_093817563.jpg">
-        <img src="PXL_20240730_124015214.PANO.jpg">
-        <img src="PXL_20250728_054502046.jpg">
-        <img src="PXL_20250731_130011985.jpg">
-        <img src="PXL_20250722_092851452.jpg">
-        <img src="PXL_20240806_085401966.PANO.jpg">
-        <img src="PXL_20240809_132605668.PANO.jpg">
-        <img src="PXL_20240811_054521682.PANO.jpg">
-    `;
-}
+
+        function getFeatureImages() {
+            document.getElementById("physical_feature_images").innerHTML = `
+                <img src="PXL_20230714_101956414.jpg">
+                <img src="PXL_20240806_064409684.PANO.jpg">
+                <img src="PXL_20230708_093817563.jpg">
+                <img src="PXL_20240730_124015214.PANO.jpg">
+                <img src="PXL_20250728_054502046.jpg">
+                <img src="PXL_20250731_130011985.jpg">
+                <img src="PXL_20250722_092851452.jpg">
+                <img src="PXL_20240806_085401966.PANO.jpg">
+                <img src="PXL_20240809_132605668.PANO.jpg">
+                <img src="PXL_20240811_054521682.PANO.jpg">
+            `;
+        }
+
+        // Show default section on load
+        window.onload = function () {
+            showSection('geo');
+        }
     </script>
 </head>
 
 <body>
 
-    <h3>AP World Region, Continent, Country, and State</h3>
+    <h3>AP World History Final Project - Karnataka</h3>
 
-    <div id="location">
-        Region: South Asia <br>
-        Continent: Asia <br>
-        Country: India <br>
-        State: Karnataka <br><br>
+    <nav>
+        <button onclick="showSection('geo')">Geographic Overview</button>
+        <button onclick="showSection('physical')">Physical Features</button>
+        <button onclick="showSection('culture')">Cultural Diffusion</button>
+        <button onclick="showSection('history')">History (1200–Present)</button>
+    </nav>
+
+    <div id="geo" class="section">
+        <h2>Geographic Determinism & Spatial Awareness</h2>
+        <p>
+            Region: South Asia <br>
+            Continent: Asia <br>
+            Country: India <br>
+            State: Karnataka
+        </p>
         <img src="flightpath.png">
     </div>
 
-    <br><br>
+    <div id="physical" class="section">
+        <h2>Physical Features</h2>
 
-    <button onclick="getPhysicalFeatures()">
-        Click the button to learn about Karnataka's Physical Features
-    </button>
-    <div id="features"></div>
-    
-    <button onclick="getFeatureImages()"> Click the button to see pcitures about Karnataka's Physical Features
-    </button>
-    
-    <div id="physical_feature_images"></div>
+        <button onclick="getPhysicalFeatures()">Load Physical Features</button>
+        <div id="features"></div>
+
+        <button onclick="getFeatureImages()">Show Images</button>
+        <div id="physical_feature_images"></div>
+    </div>
+
+    <div id="culture" class="section">
+        <h2>Cultural Synthesis & Diffusion</h2>
+        
+    </div>
+
+    <div id="history" class="section">
+        <h2>Historical Deep-Dive (1200–Present)</h2>
+       
+    </div>
+
 </body>
 
 </html>
