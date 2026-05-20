@@ -19,7 +19,8 @@
             margin-right: auto;
         }
 
-        #features {
+        #features,
+        #religionOutput {
             margin-top: 20px;
             white-space: pre-line;
         }
@@ -45,12 +46,13 @@
         .section {
             display: none;
         }
-       #geo-image img {
-    width: 90%;
-    max-width: 1000px;
-    height: auto;
-    border-radius: 10px;
-}
+
+        #geo-image img {
+            width: 90%;
+            max-width: 1000px;
+            height: auto;
+            border-radius: 10px;
+        }
     </style>
 
     <script>
@@ -87,15 +89,15 @@ Coastal Plain (Arabian Sea coast)
 - Fishing is important
 - Ports help trade and transportation
 
-Major Rivers (Kaveri, Krishna, Tungabhadra)
+Major Rivers (Kaveri, Krishna, and Tungabhadra)
 - Provide irrigation for agriculture
 - Support hydroelectric power
 - Supply water to drier inland regions
 
-Mineral Resources (plateau regions)
+Mineral Resources
 - Includes iron ore, chromite, and other minerals
 - Supports mining and heavy industry
-            `;
+`;
         }
 
         function getFeatureImages() {
@@ -113,10 +115,28 @@ Mineral Resources (plateau regions)
             `;
         }
 
-        // Show default section on load
+        function showReligions() {
+            document.getElementById("religionOutput").innerText = `
+Major Religions in Karnataka
+
+Hinduism: 84.00%
+Islam: 12.92%
+Christianity: 1.87%
+Jainism: 0.72%
+Buddhism & Sikhism: ~0.21%
+
+Analysis:
+Religion spread into India through trade routes like the Silk Road and Indian Ocean trade networks. Hinduism originated in India while Islam arrived through merchants and invasions. Christianity spread through trade and European contact.
+`;
+        }
+
+    function showReligionMap() {
+         document.getElementById("religionOutput").innerHTML = '<img src="M1-2.png">';
+    }
+
         window.onload = function () {
             showSection('geo');
-        }
+        };
     </script>
 </head>
 
@@ -124,7 +144,6 @@ Mineral Resources (plateau regions)
 
     <h3>AP World History Final Project - Karnataka</h3>
 
-    <!-- NAVIGATION -->
     <nav>
         <button onclick="showSection('geo')">Geographic Overview</button>
         <button onclick="showSection('physical')">Physical Features</button>
@@ -132,45 +151,55 @@ Mineral Resources (plateau regions)
         <button onclick="showSection('history')">History (1200–Present)</button>
     </nav>
 
-    <!-- GEOGRAPHY -->
-   <div id="geo" class="section">
-    <h2>Geographic Determinism & Spatial Awareness</h2>
+    <div id="geo" class="section">
+        <h2>Geographic Determinism & Spatial Awareness</h2>
 
-    <p>
-        Region: South Asia <br>
-        Continent: Asia <br>
-        Country: India <br>
-        State: Karnataka
-    </p>
-       <div id="geo-image">
-        <img src="flightpath.png" alt="Karnataka flight path map">
+        <p>
+            Region: South Asia <br>
+            Continent: Asia <br>
+            Country: India <br>
+            State: Karnataka
+        </p>
+
+        <div id="geo-image">
+            <img src="flightpath.png" alt="Karnataka flight path">
+        </div>
+
+        <img src="Karnataka_districts_map.svg.png" alt="Karnataka districts map">
+        <img src="karnataka-red-highlighted-in-map-of-india-2A6XMJ7.jpg" alt="Karnataka in India map">
     </div>
-       
-       <img src="Karnataka_districts_map.svg.png">
-       <img src="karnataka-red-highlighted-in-map-of-india-2A6XMJ7.jpg">
-    
-</div>
 
-    <!-- PHYSICAL FEATURES -->
     <div id="physical" class="section">
         <h2>Physical Features</h2>
 
-        <button onclick="getPhysicalFeatures()">Load Physical Features</button>
+        <button onclick="getPhysicalFeatures()">
+            Load Physical Features
+        </button>
+
         <div id="features"></div>
 
-        <button onclick="getFeatureImages()">Show Images</button>
+        <button onclick="getFeatureImages()">
+            Show Images
+        </button>
+
         <div id="physical_feature_images"></div>
     </div>
 
-    <div id="culture" class="section">
-        <h2>Cultural Synthesis & Diffusion</h2>
-        
-    </div>
+<div id="culture" class="section">
+    <h2>Cultural Synthesis & Diffusion</h2>
 
-    <div id="history" class="section">
-        <h2>Historical Deep-Dive (1200–Present)</h2>
-       
-    </div>
+    <button onclick="showReligions()">
+        Load Major Religions in Karnataka
+    </button>
+
+    <div id="religionOutput"></div>
+
+    <button onclick="showReligionMap()">
+        Load Map Showing Diffusion of Religions
+    </button>
+
+    <div id="mapOutput"></div>
+</div>
 
 </body>
 
