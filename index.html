@@ -20,7 +20,8 @@
         }
 
         #features,
-        #religionOutput {
+        #religionOutput,
+        #stateInfo {
             margin-top: 20px;
             white-space: pre-line;
         }
@@ -72,9 +73,11 @@
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll(".section");
+
             sections.forEach(section => {
                 section.style.display = "none";
             });
+
             document.getElementById(sectionId).style.display = "block";
         }
 
@@ -138,7 +141,7 @@ Jainism: 0.72%
 Buddhism and Sikhism: ~0.21%
 
 Analysis:
-Religion spread into India through trade routes such as the Silk Road and Indian Ocean trade networks. Hinduism originated in India, while Islam arrived through merchants and invasions. Christianity spread through European contact.
+Religion spread into India through trade routes such as the Silk Road and the Indian Ocean trade networks.
 `;
         }
 
@@ -149,49 +152,34 @@ Religion spread into India through trade routes such as the Silk Road and Indian
         function showKarnatakaInfo() {
             document.getElementById("stateInfo").innerHTML = `
 <h3>Major Cities in Karnataka</h3>
-<p>
-Bengaluru – IT capital<br>
-Mysuru – heritage & palaces<br>
-Mangaluru – coastal port city<br>
-Hubballi–Dharwad – commercial & education hub<br>
-Belagavi – northern Karnataka city<br>
-Udupi – temple & coastal culture<br>
-Bidar – historic fort city<br>
-Vijayapura – Indo-Islamic heritage<br>
-Kalaburagi – northern historic city
-</p>
-
+Bengaluru - IT capital<br>
+Mysuru - heritage & palaces<br>
+Mangaluru - coastal port city<br>
+Hubballi–Dharwad - commercial & education hub<br>
+Belagavi - northern Karnataka city<br>
+Udupi - temple & coastal culture<br>
+Bidar - historic fort city<br>
+Vijayapura - Indo-Islamic heritage<br>
+Kalaburagi - northern historic city
 <h3>Famous Places in Karnataka</h3>
-
 <h4>Heritage</h4>
-<p>
-Hampi – UNESCO ruins<br>
-Mysuru Palace – royal landmark<br>
-Badami, Aihole, Pattadakal – ancient temples<br>
-Belur & Halebidu – Hoysala architecture
-</p>
-
+Hampi - UNESCO ruins<br>
+Mysuru Palace - royal landmark<br>
+Badami, Aihole, Pattadakal - ancient temples<br>
+Belur & Halebidu - Hoysala architecture
 <h4>Nature</h4>
-<p>
-Coorg – coffee hills<br>
-Chikmagalur – mountains & coffee estates<br>
-Agumbe – rainforest<br>
-Kabini – wildlife safaris
-</p>
-
+Coorg - coffee hills<br>
+Chikmagalur - mountains & coffee estates<br>
+Agumbe - rainforest<br>
+Kabini - wildlife safaris
 <h4>Beaches</h4>
-<p>
-Gokarna – beaches & spiritual town<br>
-Karwar – calm coastline<br>
-Udupi & Mangaluru beaches – Malpe, Panambur
-</p>
-
+Gokarna - beaches & spiritual town<br>
+Karwar - calm coastline<br>
+Udupi & Mangaluru beaches
 <h4>Waterfalls</h4>
-<p>
 Jog Falls – major waterfall<br>
 Shivanasamudra Falls – Kaveri river<br>
 Abbey Falls – Coorg
-</p>
 `;
         }
 
@@ -229,7 +217,7 @@ Abbey Falls – Coorg
         </button>
 
         <div id="geo-image">
-            <img src="flightpath.png" alt="Karnataka flight path">
+            <img src="flightpath.png">
         </div>
 
         <img src="Karnataka_districts_map.svg.png">
