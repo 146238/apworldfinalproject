@@ -53,16 +53,28 @@
             height: auto;
             border-radius: 10px;
         }
+
+        .open-btn {
+            margin-top: 15px;
+            padding: 12px 18px;
+            font-size: 16px;
+            border: none;
+            background-color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .open-btn:hover {
+            background-color: #e0e0e0;
+        }
     </style>
 
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll(".section");
-
             sections.forEach(section => {
                 section.style.display = "none";
             });
-
             document.getElementById(sectionId).style.display = "block";
         }
 
@@ -123,16 +135,65 @@ Hinduism: 84.00%
 Islam: 12.92%
 Christianity: 1.87%
 Jainism: 0.72%
-Buddhism and Sikhism: ~ 0.21%
+Buddhism and Sikhism: ~0.21%
 
 Analysis:
-Religion spread into India through trade routes such as the Silk Road and the Indian Ocean trade networks. Hinduism originated in India, while Islam arrived through merchants and invasions. Christianity spread through trade and European contact.
+Religion spread into India through trade routes such as the Silk Road and Indian Ocean trade networks. Hinduism originated in India, while Islam arrived through merchants and invasions. Christianity spread through European contact.
 `;
         }
 
-    function showReligionMap() {
-         document.getElementById("mapOutput").innerHTML = '<img src="M1-2.png">';
-    }
+        function showReligionMap() {
+            document.getElementById("mapOutput").innerHTML = '<img src="M1-2.png">';
+        }
+
+        function showKarnatakaInfo() {
+            document.getElementById("stateInfo").innerHTML = `
+<h3>Major Cities in Karnataka</h3>
+<p>
+Bengaluru – IT capital<br>
+Mysuru – heritage & palaces<br>
+Mangaluru – coastal port city<br>
+Hubballi–Dharwad – commercial & education hub<br>
+Belagavi – northern Karnataka city<br>
+Udupi – temple & coastal culture<br>
+Bidar – historic fort city<br>
+Vijayapura – Indo-Islamic heritage<br>
+Kalaburagi – northern historic city
+</p>
+
+<h3>Famous Places in Karnataka</h3>
+
+<h4>Heritage</h4>
+<p>
+Hampi – UNESCO ruins<br>
+Mysuru Palace – royal landmark<br>
+Badami, Aihole, Pattadakal – ancient temples<br>
+Belur & Halebidu – Hoysala architecture
+</p>
+
+<h4>Nature</h4>
+<p>
+Coorg – coffee hills<br>
+Chikmagalur – mountains & coffee estates<br>
+Agumbe – rainforest<br>
+Kabini – wildlife safaris
+</p>
+
+<h4>Beaches</h4>
+<p>
+Gokarna – beaches & spiritual town<br>
+Karwar – calm coastline<br>
+Udupi & Mangaluru beaches – Malpe, Panambur
+</p>
+
+<h4>Waterfalls</h4>
+<p>
+Jog Falls – major waterfall<br>
+Shivanasamudra Falls – Kaveri river<br>
+Abbey Falls – Coorg
+</p>
+`;
+        }
 
         window.onload = function () {
             showSection('geo');
@@ -146,11 +207,13 @@ Religion spread into India through trade routes such as the Silk Road and the In
 
     <nav>
         <button onclick="showSection('geo')">Geographic Overview</button>
+        <button onclick="showSection('karnataka')">Karnataka Overview</button>
         <button onclick="showSection('physical')">Physical Features</button>
         <button onclick="showSection('culture')">Cultural Diffusion</button>
         <button onclick="showSection('history')">History 1200 to Present</button>
     </nav>
 
+    <!-- GEOGRAPHIC OVERVIEW -->
     <div id="geo" class="section">
         <h2>Geographic Determinism & Spatial Awareness</h2>
 
@@ -161,45 +224,48 @@ Religion spread into India through trade routes such as the Silk Road and the In
             State: Karnataka
         </p>
 
+        <button class="open-btn" onclick="showSection('karnataka')">
+            Open Karnataka Overview
+        </button>
+
         <div id="geo-image">
             <img src="flightpath.png" alt="Karnataka flight path">
         </div>
 
-        <img src="Karnataka_districts_map.svg.png" alt="Karnataka districts map">
-        <img src="karnataka-red-highlighted-in-map-of-india-2A6XMJ7.jpg" alt="Karnataka in India map">
+        <img src="Karnataka_districts_map.svg.png">
+        <img src="karnataka-red-highlighted-in-map-of-india-2A6XMJ7.jpg">
     </div>
 
+    <!-- KARNATAKA -->
+    <div id="karnataka" class="section">
+        <h2>Karnataka Overview</h2>
+
+        <button onclick="showKarnatakaInfo()">Load Info about Karnataka</button>
+
+        <div id="stateInfo"></div>
+    </div>
+
+    <!-- PHYSICAL FEATURES -->
     <div id="physical" class="section">
         <h2>Physical Features</h2>
 
-        <button onclick="getPhysicalFeatures()">
-            Load Physical Features
-        </button>
-
+        <button onclick="getPhysicalFeatures()">Load Physical Features</button>
         <div id="features"></div>
 
-        <button onclick="getFeatureImages()">
-            Show Images
-        </button>
-
+        <button onclick="getFeatureImages()">Show Images</button>
         <div id="physical_feature_images"></div>
     </div>
 
-<div id="culture" class="section">
-    <h2>Cultural Synthesis & Diffusion</h2>
+    <!-- CULTURE -->
+    <div id="culture" class="section">
+        <h2>Cultural Synthesis & Diffusion</h2>
 
-    <button onclick="showReligions()">
-        Load Major Religions in Karnataka
-    </button>
+        <button onclick="showReligions()">Load Major Religions</button>
+        <div id="religionOutput"></div>
 
-    <div id="religionOutput"></div>
-
-    <button onclick="showReligionMap()">
-        Load Map Showing Diffusion of Religions
-    </button>
-
-    <div id="mapOutput"></div>
-</div>
+        <button onclick="showReligionMap()">Load Map</button>
+        <div id="mapOutput"></div>
+    </div>
 
 </body>
 
