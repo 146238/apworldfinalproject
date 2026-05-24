@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,6 +10,7 @@
             color: black;
             background-color: steelblue;
             text-align: center;
+            font-family: Arial, sans-serif;
         }
 
         img {
@@ -17,6 +19,7 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            border-radius: 10px;
         }
 
         #features,
@@ -24,6 +27,10 @@
         #stateInfo {
             margin-top: 20px;
             white-space: pre-line;
+        }
+
+        #stateInfo {
+            font-size: 16px;
         }
 
         nav {
@@ -78,7 +85,11 @@
                 section.style.display = "none";
             });
 
-            document.getElementById(sectionId).style.display = "block";
+            const selectedSection = document.getElementById(sectionId);
+
+            if (selectedSection) {
+                selectedSection.style.display = "block";
+            }
         }
 
         function getPhysicalFeatures() {
@@ -112,6 +123,17 @@ Major Rivers (Kaveri, Krishna, and Tungabhadra)
 Mineral Resources
 - Includes iron ore, chromite, and other minerals
 - Supports mining and heavy industry
+
+Climate
+- Subtropical
+- Precipitation ranges from roughly 20 inches to nearly 160 inches
+- Most of the annual precipitation falls between June and September
+
+Plants and Animals
+- Coconut palms line the lagoons of the coastal plain region
+- Monsoon forests cover the Western Ghats
+- Scrublands stretch across the drier plains
+- The monsoon forests are especially rich in wildlife
 `;
         }
 
@@ -141,45 +163,96 @@ Jainism: 0.72%
 Buddhism and Sikhism: ~0.21%
 
 Analysis:
-Religion spread into India through trade routes such as the Silk Road and the Indian Ocean trade networks.
+Karnataka has a Hindu majority, but it also has significant Muslim,
+Christian, and Jain communities. Religion has shaped Karnataka's
+architecture, culture, festivals, and trade networks for centuries.
 `;
         }
 
         function showReligionMap() {
-            document.getElementById("mapOutput").innerHTML = '<img src="M1-2.png">';
+            document.getElementById("mapOutput").innerHTML =
+                '<img src="M1-2.png">';
         }
 
-        function showKarnatakaInfo() {
-            document.getElementById("stateInfo").innerHTML = `
+        function showKarnatakaInfoMap() {
+            document.getElementById("mapInfo").innerHTML = `
+                <img src="Karnataka_districts_map.svg.png">
+                <img src="karnataka-red-highlighted-in-map-of-india-2A6XMJ7.jpg">
+            `;
+        }
+
+        function showKarnatakaInfoCities() {
+            document.getElementById("stateInfoCities").innerHTML = `
 <h3>Major Cities in Karnataka</h3>
+
 Bengaluru - IT capital<br>
 Mysuru - heritage & palaces<br>
 Mangaluru - coastal port city<br>
-Hubballi–Dharwad - commercial & education hub<br>
+Hubballi-Dharwad - commercial & education hub<br>
 Belagavi - northern Karnataka city<br>
 Udupi - temple & coastal culture<br>
 Bidar - historic fort city<br>
 Vijayapura - Indo-Islamic heritage<br>
 Kalaburagi - northern historic city
+
 <h3>Famous Places in Karnataka</h3>
+
 <h4>Heritage</h4>
 Hampi - UNESCO ruins<br>
 Mysuru Palace - royal landmark<br>
 Badami, Aihole, Pattadakal - ancient temples<br>
 Belur & Halebidu - Hoysala architecture
+
 <h4>Nature</h4>
 Coorg - coffee hills<br>
 Chikmagalur - mountains & coffee estates<br>
 Agumbe - rainforest<br>
 Kabini - wildlife safaris
+
 <h4>Beaches</h4>
 Gokarna - beaches & spiritual town<br>
 Karwar - calm coastline<br>
 Udupi & Mangaluru beaches
+
 <h4>Waterfalls</h4>
-Jog Falls – major waterfall<br>
-Shivanasamudra Falls – Kaveri river<br>
-Abbey Falls – Coorg
+Jog Falls - major waterfall<br>
+Shivanasamudra Falls - Kaveri River<br>
+Abbey Falls - Coorg
+`;
+        }
+
+        function showKarnatakaInfoState() {
+            document.getElementById("karnatakaStateInfo").innerHTML = `
+<h3>State Info</h3>
+
+- State in southern India<br>
+- Bordered by Goa and Maharashtra to the north, Telangana to the east,
+- Tamil Nadu to the southeast, Kerala to the south, and the Arabian Sea to the west.<br>
+
+- Capital: Bengaluru (Bangalore)<br>
+- Population: 73,540,000 people<br>
+
+<h3>Languages</h3>
+- The main language is Kannada, but other languages are also spoken.<br>
+
+<h3>Economy</h3>
+- One of India's leading economic states<br>
+- Major center for information technology and biotechnology<br>
+- Strong industries include aerospace, manufacturing, silk production, and agriculture<br>
+- Coffee and spice plantations contribute significantly to exports<br>
+- Mining supports heavy industry and industrial development<br>
+
+<h3>Education and Technology</h3>
+- Major hub for science, engineering, and higher education<br>
+- Known for research institutions and technology companies<br>
+- Large startup and innovation ecosystem<br>
+- Contributes significantly to India's software and technology sectors<br>
+
+<h3>Tourism</h3>
+- Famous for palaces, temples, forests, and heritage sites<br>
+- Known for historical architecture and religious landmarks<br>
+- Popular for wildlife tourism, trekking, and cultural festivals<br>
+- UNESCO heritage sites attract international visitors
 `;
         }
 
@@ -191,14 +264,28 @@ Abbey Falls – Coorg
 
 <body>
 
-    <h3>AP World History Final Project - Karnataka</h3>
+    <h1>AP World History Final Project - Karnataka</h1>
 
     <nav>
-        <button onclick="showSection('geo')">Geographic Overview</button>
-        <button onclick="showSection('karnataka')">Karnataka Overview</button>
-        <button onclick="showSection('physical')">Physical Features</button>
-        <button onclick="showSection('culture')">Cultural Diffusion</button>
-        <button onclick="showSection('history')">History 1200 to Present</button>
+        <button onclick="showSection('geo')">
+            Geographic Overview
+        </button>
+
+        <button onclick="showSection('karnataka')">
+            Karnataka Overview
+        </button>
+
+        <button onclick="showSection('physical')">
+            Physical Features
+        </button>
+
+        <button onclick="showSection('culture')">
+            Cultural Diffusion
+        </button>
+
+        <button onclick="showSection('history')">
+            History 1200 to Present
+        </button>
     </nav>
 
     <!-- GEOGRAPHIC OVERVIEW -->
@@ -212,35 +299,52 @@ Abbey Falls – Coorg
             State: Karnataka
         </p>
 
-        <button class="open-btn" onclick="showSection('karnataka')">
-            Open Karnataka Overview
-        </button>
-
         <div id="geo-image">
             <img src="flightpath.png">
         </div>
-
-        <img src="Karnataka_districts_map.svg.png">
-        <img src="karnataka-red-highlighted-in-map-of-india-2A6XMJ7.jpg">
     </div>
 
-    <!-- KARNATAKA -->
+    <!-- KARNATAKA OVERVIEW -->
     <div id="karnataka" class="section">
         <h2>Karnataka Overview</h2>
 
-        <button onclick="showKarnatakaInfo()">Load Info about Karnataka</button>
+        <button onclick="showKarnatakaInfoMap()">
+            Load Maps of Karnataka
+        </button>
 
-        <div id="stateInfo"></div>
+        <div id="mapInfo"></div>
+
+        <br><br>
+
+        <button onclick="showKarnatakaInfoState()">
+            Load Info about Karnataka
+        </button>
+
+        <div id="karnatakaStateInfo"></div>
+
+        <br><br>
+
+        <button onclick="showKarnatakaInfoCities()">
+            Load Info about Karnataka's Cities
+        </button>
+
+        <div id="stateInfoCities"></div>
     </div>
 
     <!-- PHYSICAL FEATURES -->
     <div id="physical" class="section">
         <h2>Physical Features</h2>
 
-        <button onclick="getPhysicalFeatures()">Load Physical Features</button>
+        <button onclick="getPhysicalFeatures()">
+            Load Physical Features
+        </button>
+
         <div id="features"></div>
 
-        <button onclick="getFeatureImages()">Show Images</button>
+        <button onclick="getFeatureImages()">
+            Show Images
+        </button>
+
         <div id="physical_feature_images"></div>
     </div>
 
@@ -248,11 +352,24 @@ Abbey Falls – Coorg
     <div id="culture" class="section">
         <h2>Cultural Synthesis & Diffusion</h2>
 
-        <button onclick="showReligions()">Load Major Religions</button>
+        <button onclick="showReligions()">
+            Load Major Religions
+        </button>
+
         <div id="religionOutput"></div>
 
-        <button onclick="showReligionMap()">Load Map</button>
+        <button onclick="showReligionMap()">
+            Load Religion Map
+        </button>
+
         <div id="mapOutput"></div>
+    </div>
+
+    <!-- HISTORY -->
+    <div id="history" class="section">
+        <h2>History of Karnataka (1200-Present)</h2>
+
+     
     </div>
 
 </body>
