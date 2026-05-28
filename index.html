@@ -5,7 +5,7 @@
     <title>AP World History Final Project</title>
 
     <style>
-        body {
+     body {
             font-size: 20px;
             color: black;
             background-color: steelblue;
@@ -79,7 +79,6 @@
         .open-btn:hover {
             background-color: #e0e0e0;
         }
-    
     </style>
 
     <script>
@@ -398,12 +397,125 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
 - This crucial battle affected South India's political map and contributed to its social and cultural evolution. <br>
 - The destruction disrupted large-scale temple building and the broader patronage of art, architecture, and language that had previously flourished in the region.
 <img src="vijayanagara-empire-map.jpg">
-`; 
-    
-        
-                
+`;              
         }
 
+        function showInterviewInfo() {
+    document.getElementById("interviewInfo").innerHTML = `
+    
+    <h2>Identities and Relationships</h2>
+
+    <p><b>What does being from Karnataka mean to you?</b></p>
+    <p>
+        I am proud to be born in Karnataka. It is a very beautiful place, 
+        and I love the atmosphere and culture.
+    </p>
+
+    <p><b>What values or traditions shaped how you grew up?</b></p>
+    <p>
+        Celebrating festivals was an important tradition in my life. 
+        I learned values such as respecting elders, hospitality, unity, 
+        patience, and enjoying life one day at a time.
+    </p>
+
+    <h2>Orientation in Space and Time</h2>
+
+    <p><b>What place or historical event is important in Karnataka?</b></p>
+    <p>
+        Bengaluru is very important to me because of its weather, food, 
+        shopping, and overall atmosphere. It is also my home city, 
+        so I have a special connection with it.
+    </p>
+
+    <p><b>How has Karnataka changed over the years?</b></p>
+    <p>
+        When I was younger, Karnataka was mostly populated by Kannada-speaking people. 
+        Over time, more people from other states moved here for jobs and the pleasant weather.
+    </p>
+
+    <p><b>What changes have older generations noticed most?</b></p>
+    <p>
+        Older generations have noticed major changes in phones, technology, 
+        traffic, and population growth.
+    </p>
+
+    <h2>Personal and Cultural Expression</h2>
+
+    <p><b>What traditions or festivals are important to you?</b></p>
+    <p>
+        Navaratri, Deepavali, and Ganesh Chaturthi are very important festivals to me.
+    </p>
+
+    <p><b>How do young people express their culture today?</b></p>
+    <p>
+        Young people celebrate many Indian festivals, no matter where they are from.
+    </p>
+
+    <p><b>How important is language in your identity?</b></p>
+    <p>
+        I am very attached to my first language because I grew up speaking it 
+        with my friends and family. Language feels like home to me.
+    </p>
+
+    <h2>Scientific and Technical Innovation</h2>
+
+    <p><b>How has technology changed daily life in Karnataka?</b></p>
+    <p>
+        Today, almost everyone has a phone. When I was younger, phones were much less common.
+    </p>
+
+    <p><b>What impact has Bengaluru’s tech industry had?</b></p>
+    <p>
+        One major impact has been increased traffic due to rapid growth and development.
+    </p>
+
+    <p><b>Has technology improved education or work opportunities?</b></p>
+    <p>
+        Yes. Technology has improved both education and work opportunities. 
+        Working from home especially helped many people during COVID-19.
+    </p>
+
+    <h2>Globalization and Sustainability</h2>
+
+    <p><b>How has globalization affected Karnataka?</b></p>
+    <p>
+        Globalization has made products from around the world easily available, 
+        and many multinational companies now operate in Karnataka.
+    </p>
+
+    <p><b>What environmental issues concern people today?</b></p>
+    <p>
+        Urbanization is changing the environment and affecting weather patterns.
+    </p>
+
+    <p><b>How has climate change affected daily life?</b></p>
+    <p>
+        The weather has become more humid, and there is less rainfall than before.
+    </p>
+
+    <h2>Fairness and Development</h2>
+
+    <p><b>What challenges do young people face today?</b></p>
+    <p>
+        Because technology is so easily available, many people spend less time 
+        talking with others in person.
+    </p>
+
+    <p><b>What is one thing you would improve in your community?</b></p>
+    <p>
+        I would reduce traffic, especially around schools.
+    </p>
+
+    <p><b>What differences do you notice between rural and urban areas?</b></p>
+    <p>
+        Urban areas have become much more crowded and heavily populated 
+        compared to rural areas.
+    </p>
+
+    <h2>Interview Reflection</h2>
+    `;
+}
+        
         window.onload = function () {
             showSection('geo');
         };
@@ -434,6 +546,11 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
         <button onclick="showSection('history')">
             History 1200 to Present
         </button>
+
+        <button onclick="showSection('interview')">
+            Interview
+        </button>
+        
     </nav>
 
     <!-- GEOGRAPHIC OVERVIEW -->
@@ -482,6 +599,9 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
         </button>
 
         <div id="stateInfoCities"></div>
+
+// add info about monuments and famous people
+        
     </div>
 
     <!-- PHYSICAL FEATURES -->
@@ -547,6 +667,17 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
         <div id="historyContent"></div>
     </div>
 
+    <!-- INTERVIEW -->
+    <div id="interview" class="section">
+        <h2>History of Karnataka (1200-Present)</h2>
+
+        
+        <button onclick="showInterviewInfo()">
+            Load Interview
+        </button>
+
+        <div id="interviewInfo"></div>
+    </div>
 </body>
 
 </html>
