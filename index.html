@@ -381,9 +381,8 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
         }
 
         function showHistoryInfo() {
-            document.getElementById("historyContent").innerHTML = `
-<h3>History of Karnataka</h3>
-- Event: Battle of Talikota <br>
+            document.getElementById("historyContentTalikokta").innerHTML = `
+<h3>Battle of Talikota</h3>
 - Date: January 26, 1565 <br>
 - Location: Present-day Karnataka, India <br>
 - Participants: Deccan Sultanates vs. Vijayanagara Empire <br>
@@ -402,6 +401,8 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
 
         function showInterviewInfo() {
     document.getElementById("interviewInfo").innerHTML = `
+        
+    <p>I interviewed my mom who was born in Bengalore, Karnataka and moved to the United States.</p>
     
     <h2>Identities and Relationships</h2>
 
@@ -513,6 +514,77 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
     </p>
 
     <h2>Interview Reflection</h2>
+    
+    // add
+    `;
+}
+        
+    function showFamousPeople() {
+    document.getElementById("famousPeople").innerHTML = `
+<h3>Famous People from Karnataka</h3>
+
+• Sir M. Visvesvaraya – engineer and statesman<br>
+• Dr. Rajkumar – legendary Kannada actor and singer<br>
+• Vishnuvardhan – Kannada film actor<br>
+• U. R. Rao – space scientist and former ISRO chairman<br>
+• N. R. Narayana Murthy – founder of Infosys<br>
+• Sudha Murty – author and philanthropist<br>
+• Rahul Dravid – international cricketer<br>
+• Anil Kumble – international cricketer<br>
+• Prakash Padukone – badminton champion<br>
+• Pankaj Advani – billiards and snooker champion<br>
+• Sandeep Unnikrishnan – Indian Army officer and national hero<br>
+• C. V. Raman – Nobel Prize-winning physicist<br>
+• B. S. Yediyurappa – former Chief Minister of Karnataka<br>
+• Kuvempu – famous Kannada poet and writer<br>
+• Dr. Devi Shetty – heart surgeon and medical entrepreneur<br>
+• Shakuntala Devi – mathematician and author<br>
+`;
+}
+    function showHistoryInfoAngloMysoreWars(){
+    document.getElementById("historyContentAngloMysoreWars").innerHTML = `
+    
+    <h2>Anglo-Mysore Wars (1767–1799)</h2>
+
+    • Dates: 1767 to 1799 <br>
+    • A series of four wars fought between the Kingdom of Mysore and the British East India Company in southern India.<br>
+    • Mysore was ruled by Hyder Ali and later his son Tipu Sultan.<br>
+    • The wars were mainly fought over control of trade, territory, and political power in South India.<br>
+    • Mysore used advanced military technology, including rockets and modernized armies.<br>
+    • Tipu Sultan allied with the French to resist British expansion.<br>
+    • The British formed alliances with the Marathas and the Nizam of Hyderabad against Mysore.<br>
+    • The Fourth Anglo-Mysore War ended in 1799 with the British capture of Seringapatam and the death of Tipu Sultan.<br>
+    • After the war, the British gained major control over southern India and reduced Mysore's independence.<br>
+    • The wars marked the beginning of strong British influence in Karnataka.<br>
+    • British control changed the political structure of Mysore and weakened local rulers.<br>
+    • The economy became more connected to British trade networks instead of local systems.<br>
+    • Railroads, English education, and British administrative systems were later introduced into the region.<br>
+    • The fall of Tipu Sultan became an important symbol of resistance against colonialism in Karnataka’s history.<br>
+    • The wars shifted Karnataka from being a powerful independent kingdom to part of British-controlled India.<br>
+    • These events shaped Karnataka’s later role in the Indian independence movement and its modern political identity.<br>
+
+    `;
+} 
+        
+        function showHistoryInfoDecolonization(){
+    document.getElementById("historyContentDecolonization").innerHTML = `
+    
+    <h2>Decolonization and Formation of Karnataka State</h2>
+
+    • India gained independence from Britain in 1947 after many years of nationalist movements and protests.<br>
+    • Before independence, the region of present-day Karnataka was divided among different provinces and princely states, including Mysore State, Bombay Presidency, Madras Presidency, and Hyderabad State.<br>
+    • Leaders and activists pushed for the unification of Kannada-speaking regions into one state.<br>
+    • In 1956, the States Reorganisation Act reorganized Indian states mainly based on language.<br>
+    • Kannada-speaking regions were united to form the enlarged Mysore State.<br>
+    • In 1973, Mysore State was officially renamed Karnataka.<br>
+    • Bengaluru developed into an important center for education, technology, and government after state formation.<br>
+    • The formation of Karnataka helped strengthen Kannada language, culture, and regional identity.<br>
+    • British colonial rule ended, allowing local leaders and democratic institutions to take control of the region.<br>
+    • The unification of Kannada-speaking areas created a stronger regional identity and political unity.<br>
+    • Karnataka gained more control over its economy, education, and development policies.<br>
+    • Investments in science, technology, and education helped Bengaluru become the “Silicon Valley of India.”<br>
+    • The state preserved and promoted Kannada traditions, literature, and cultural heritage.<br>
+    • Decolonization allowed Karnataka to become an important contributor to modern India’s economy and politics.<br>
     `;
 }
         
@@ -600,8 +672,13 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
 
         <div id="stateInfoCities"></div>
 
-// add info about monuments and famous people
-        
+        <br><br>
+
+        <button onclick="showFamousPeople()">
+        Load Famous People from Karnataka
+        </button>
+
+<div id="famousPeople"></div>
     </div>
 
     <!-- PHYSICAL FEATURES -->
@@ -661,17 +738,25 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
         <p>Essential Question: What were some major events in Karnataka's history?</p>
         
         <button onclick="showHistoryInfo()">
-            Load Historical Deep-Dive
+            Load Info about the Battle of Talikota
         </button>
-
-        <div id="historyContent"></div>
+        <div id="historyContentTalikokta"></div>
+        <br>
+        <button onclick="showHistoryInfoAngloMysoreWars()">
+        Load Info about the Anglo-Mysore Wars
+        </button>
+        <div id="historyContentAngloMysoreWars"></div>
+        <br>
+        <button onclick="showHistoryInfoDecolonization()">
+        Load Info about Decolonization and Formation of Karnataka State
+        </button>
+        <div id="historyContentDecolonization"></div>
     </div>
 
     <!-- INTERVIEW -->
     <div id="interview" class="section">
-        <h2>History of Karnataka (1200-Present)</h2>
+        <h1>Interview</h1>
 
-        
         <button onclick="showInterviewInfo()">
             Load Interview
         </button>
