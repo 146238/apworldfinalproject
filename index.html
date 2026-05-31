@@ -123,6 +123,7 @@ Major Rivers (Kaveri, Krishna, and Tungabhadra)
 - Provide irrigation for agriculture
 - Support hydroelectric power
 - Supply water to drier inland regions
+- Major tourist areas
 
 Mineral Resources
 - Includes iron ore, chromite, and other minerals
@@ -378,7 +379,7 @@ Abbey Falls - Coorg
 
 • Cricket: <br>
     • by far the most popular sport in Karnataka.
-    • Karnataka has an IPL cricket team, RCB, with 1 IPL championship and the possibility of adding a second title. (As of May 30, 2026)<br>
+    • Karnataka has an IPL cricket team, RCB, with 2 IPL championships. (As of May 31, 2026)<br>
     • RCB has one of the largest and most dedicated fan bases in Indian cricket.<br>
     • Karnataka has produced many notable cricketers, including Rahul Dravid, Anil Kumble, and Jasprit Bumrah.<br>
 
@@ -586,7 +587,7 @@ Karnataka’s culture is very much in my life, in terms of its food, music, reli
 
     <h2>Interview Reflection</h2>
     
-This interview helped me better understand how strongly people from Karnataka connect their identity to language, traditions, and community values. I learned that while modernization and globalization have brought more opportunities, they have also created challenges like traffic, overcrowding, and less personal interaction between people. The responses showed how technology and migration have changed daily life over time, especially in major cities like Bengaluru. Overall, the interview demonstrated how Karnataka continues to balance its cultural traditions with rapid economic and technological growth.
+This interview helped me better understand how strongly people from Karnataka connect their identity to language, traditions, and community values. I learned that while modernization and globalization have brought more opportunities, they have also created challenges like traffic, overcrowding, and less personal interaction between people. It showed how technology and migration have changed daily life over time, especially in major cities like Bengaluru. I also realized how interconnected Karnataka is with the rest of India and the world, because of job opportunities and allowing people to emigrate there. It demonstrated how Karnataka continues to balance its cultural traditions with rapid economic and technological growth.
 
     `;
 }
@@ -724,6 +725,20 @@ This interview helped me better understand how strongly people from Karnataka co
 
 `;
 }
+        
+        function showHistoryInfoReferences(){
+            document.getElementById("historycontentreferences").innerHTML = `
+            
+<h3>References</h3>
+    • Alam, M. (2026, May 27). India - Democracy, Federalism, Constitution. Britannica. Retrieved May 30, 2026, from https://www.britannica.com/place/India/Government-and-politics#ref486463
+    • Cartwright, M., & Singleton, H. (2022, November 29). Anglo-Mysore Wars. World History Encyclopedia. Retrieved May 30, 2026, from https://www.worldhistory.org/Anglo-Mysore_Wars/
+    • Chaudhuri, S. (26, April 30). Tipu Sultan. Retrieved May 30, 2026, from https://www.britannica.com/biography/Tipu-Sultan
+    • Ghori, G. K. (2026, May 29). Karnataka. Retrieved May 30, 2026, from https://www.britannica.com/place/Karnataka-state-India
+    • Hyder Ali | 18th Century Indian Ruler & Military Strategist. (n.d.). Britannica. Retrieved May 30, 2026, from https://www.britannica.com/biography/Hyder-Ali
+    • Mysore Wars. (2025, Febuary 25). Retrieved May 30, 2026, from https://www.britannica.com/event/Mysore-Wars
+            `;
+        }
+        
         window.onload = function () {
             showSection('geo');
         };
@@ -894,12 +909,19 @@ This interview helped me better understand how strongly people from Karnataka co
         Load Info about Decolonization and Formation of Karnataka State
         </button>
         <div id="historyContentDecolonization"></div>
+        <br>
+        <button onclick="showHistoryInfoReferences()">
+        Show References for Historical Deepdive
+        </button>
+        <div id="historycontentreferences"></div>
     </div>
 
     <!-- INTERVIEW -->
     <div id="interview" class="section">
         <h1>Interview</h1>
 
+        <p>What are facts that we can learn about Karnataka not from a textbook?</p>
+        
         <button onclick="showInterviewInfo()">
             Load Interview
         </button>
